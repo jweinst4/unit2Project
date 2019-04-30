@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+    
+    img {
+      width: 40%;
+    }
+
+
+
+    /* flexbox help https://www.w3schools.com/css/css3_flexbox.asp */
+    .row {
+      display: flex;
+      background-color: grey;  
+      font-size: 20px;
+    }
+
+    .col {
+      flex: 1 1 0;
+    }
+
+    .footer {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      position: absolute;
+      height: 80px;
+      width: 100%;  
+    }
+
+    .row > div {
+    
+      display: flex;
+      margin: 20px;
+      text-align: center;
+      font-size: 15px;
+      min-height: 220px;
+    }
+
+    .navBar {
+      display: flex;
+      background-image: url("https://i.imgur.com/LMLm1hu.jpg?1");
+      height: 200px;
+      background-repeat: no-repeat repeat;
+      background-size: 60%;
+      width: 100%;
+      border: 1px solid black;
+      align-items: center;
+    }
+
+    .outfitOption {
+      display: flex;
+      flex-direction:column;
+      max-width: 25%;
+    }
+
+    #clothingImage {
+    background: white;
+    }
+
+    .outfitOption > div {
+      background: pink;
+      border: 1px solid black;
+      align-items: center;
+      height: 50%;
+      float: right;
+      
+    }
+
+    </style>
+  </head>
+    <body>
+
+<div class="container">
+
+      <div class = "navBar">
+          <div class = "col">
+            <h4>
+              <a href = "/">Homepage</a>
+            </h4>
+          </div>
+          <br/>
+
+          <div class = "col">
+              <h4>
+                <a href = "/users/show/<%=user.id%>"">Testing Show Page</a>
+              </h4>
+          </div>
+          <br/>
+
+          <div class = "col">
+              <h4>
+                <a href = "/users/currentOutfit/<%=user.id%>">Current Outfit Page</a>
+              </h4>
+          </div>
+
+          <div class = "col">
+              <h4>
+                <a href = "/users/addItem/<%=user.id%>">  Add Item</a>
+              </h4>
+          </div>
+
+          <div class = "col">
+              <h4><a href = "/users/edit/<%=user.id%>
+                ">  Edit Profile</a></h4>
+          </div>
+    </div>
+
+        
+    <div class = "row">
+      <div class = "col" id = "clothingImage">
+          <div class = "backgroundImage">
+            <h3>T-Shirts</h3>
+            <a href = "/users/show/tShirts/<%=user.id%>">
+              <% if (tShirtImage) { %>
+            <img src = "<%=tShirtImage%>">
+                <% } %>
+            </a>
+          </div>
+
+      <div class = "outfitOption">
+          <div class = "row">
+            <a href = "#">Add to Current Outfit</a>
+          </div>
+        
+          <div class = "row">
+            <form action="/users/show/<%=user.id; %>/tShirt?_method=DELETE" method="POST" >
+          
+              <input type="submit" value="DELETE T-SHIRT"/>
+            
+            </form>
+          </div>
+      </div>
+    </div>
+
+      <div class = "col"  id = "clothingImage">
+        <div class = "backgroundImage">
+          <h3>Jeans</h3>
+            <a href = "/users/show/jeans/<%=user.id%>">
+              <% if (jeansImage) { %>
+            <img src = "<%=jeansImage%>">
+            <% } %>
+            </a>
+        </div>
+
+        <div class = "outfitOption">
+          <div class = "row">
+            <a href = "#">Add to Current Outfit</a>
+          </div>
+
+          <div class = "row">
+            <form action="/users/show/<%=user.id; %>/jeans?_method=DELETE" method="POST" >
+      
+                <input type="submit" value="DELETE JEANS"/>
+            </form>
+          </div>
+        </div>
+  </div>
+
+      <div class = "col" id = "clothingImage">
+          <div class = "backgroundImage">
+            <h3>Pants</h3>
+            <a href = "/users/show/pants/<%=user.id%>">
+                <% if (pantsImage) { %>
+            <img src = "<%=pantsImage%>">
+            <% } %>
+            </a>
+          </div>
+      
+          <div class = "outfitOption">
+              <div class = "row">
+                <a href = "#">Add to Current Outfit</a>
+              </div>
+
+            <div class = "row">
+                <form action="/users/show/<%=user.id; %>/pants?_method=DELETE" method="POST" >
+                  <input type="submit" value="DELETE PANTS"/> 
+              </form>
+            </div>
+          </div>
+      </div>
+    </div>
+
+      <div class = "row">
+        <div class = "col" id = "clothingImage">
+  
+          <div class = "backgroundImage">
+        <h3>Hats</h3>
+    
+        <a href = "/users/show/hat/<%=user.id%>">
+            <% if (hatImage) { %>
+        <img src = "<%=hatImage%>">
+        <% } %>
+          </a>
+        </div>
+        
+          <div class = "outfitOption">
+            <div class = "row">
+          <a href = "#">Add to Current Outfit</a>
+          </div>
+
+          <div class = "row">
+              <form action="/users/show/<%=user.id; %>/hat?_method=DELETE" method="POST" >
+            
+                <input type="submit" value="DELETE HAT"/>
+            
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class = "col" id = "clothingImage">
+        <div class = "backgroundImage">
+        <h3>Sneakers</h3>
+        <a href = "/users/show/sneakers/<%=user.id%>">
+            <% if (sneakersImage) { %>
+        <img src = "<%=sneakersImage%>">
+        <% } %>
+          </a>
+        </div>
+  
+          <div class = "outfitOption">
+            <div class = "row">
+          <a href = "#">Add to Current Outfit</a>
+          </div>
+
+          <div class = "row">
+              <form action="/users/show/<%=user.id; %>/sneakers?_method=DELETE" method="POST" >
+          
+                <input type="submit" value="DELETE SNEAKERS"/>
+          
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class = "col" id = "clothingImage">
+        <div class = "backgroundImage">
+        <h3>Watches</h3>
+        <a href = "/users/show/watch/<%=user.id%>">
+            <% if (watchImage) { %>
+        <img src = "<%=watchImage%>">
+        <% } %>
+          </a>
+        </div>
+    
+          <div class = "outfitOption">
+            <div class = "row">
+          <a href = "#">Add to Current Outfit</a>
+          </div>
+
+          <div class = "row">
+              <form action="/users/show/<%=user.id; %>/watch?_method=DELETE" method="POST" >
+          
+                <input type="submit" value="DELETE WATCH"/>
+          
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class = "col" id = "clothingImage">
+        <div class = "backgroundImage">
+          <h3>Jackets</h3>
+          <a href = "/users/show/jacket/<%=user.id%>">
+              <% if (jacketImage) { %>
+          <img src = "<%=jacketImage%>">
+          <% } %> 
+            </a>
+          </div>
+      
+            <div class = "outfitOption">
+              <div class = "row">
+            <a href = "#">Add to Current Outfit</a>
+            </div>
+
+            <div class = "row ">
+                <form action="/users/show/<%=user.id; %>/jacket?_method=DELETE" method="POST" >
+                
+                  <input type="submit" value="DELETE JACKET"/>
+          
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+
+      </div>
+
+      <div class = "footer">
+
+  
+
+<div class = "col">
+
+    <form action="/users/show/<%=user.id; %>?_method=DELETE" method="POST" id = "deleteUserButton">
+
+      <input type="submit" value="DELETE USER"/>
+  </form>
+</div>
+
+  
+
+<div class = "col">
+      <h4>Hello, <%=user.username%>!</h4>
+</div>
+    <div class = "col"></div>
+      <h4> Your userID is <%=user.id%></h4>
+    </div>
+  </div>
+
+    
+        </div>
+    </body>
+</html>

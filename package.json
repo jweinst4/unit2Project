@@ -1,27 +1,22 @@
 {
-  "name": "unit2project",
+  "name": "kingsman_auth",
   "version": "1.0.0",
-  "engines": {
-    "node":"11.12.0"
-  },
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jweinst4/unit2Project.git"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/jweinst4/unit2Project/issues"
-  },
-  "homepage": "https://github.com/jweinst4/unit2Project#readme",
   "dependencies": {
-    "express": "^4.16.4",
-    "method-override": "^3.0.0",
-    "mongoose": "^5.5.3"
+    "bcrypt": "^3.0.6",
+    "dotenv": "^7.0.0",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "jquery": "^3.4.0",
+    "method-override": "^2.3.10",
+    "mongoose": "^5.0.9"
   }
 }

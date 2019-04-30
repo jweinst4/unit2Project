@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+
+/* https://www.w3.org/TR/css-backgrounds-3/#layering */
+/* https://www.retailresource.com/product/73001/Arms-to-Side-White-Male-Mannequin */
+            .container {
+                margin-top: 40px;
+            }
+            .mannequinArea {
+                width: 200px;
+                height: 330px;
+                position: fixed;
+                left: 495px;
+                align-items: center;
+                /* background: black; */
+            }
+
+        
+
+            .hatArea {
+                width: 70px;
+                height: 70px;
+                position: absolute;
+                display: flex;
+                justify-content: center;
+                /* background: red; */
+
+                left: 570px;
+                margin-top: -20px;
+            }
+
+            .jacketArea {
+                width: 200px;
+                height: 220px; 
+                /* background: orange; */
+             display: flex;
+             justify-content: center;
+                position: fixed;
+                left: 505px;
+                margin-top: 70px;
+                z-index: -1;
+            
+            }
+
+                img {
+         
+            max-height: 100%;
+        
+
+                }
+
+              
+
+                #watch {
+                    transform: rotate(70deg);
+                    /* background: lightblue; */
+                }
+
+            .tShirtArea {
+                width: 200px;
+                height: 220px;   
+                display: flex;   
+                justify-content: center;
+             
+                position: fixed;
+                left: 505px;
+                margin-top: 70px;
+                /* background: purple; */
+  
+            }
+
+            .tShirtArea > img {
+                width: 100%;
+            }
+
+       
+
+            .watchArea {
+                display: flex;
+                width: 40px;
+                height: 40px;
+                position: fixed;
+                left: 510px;
+                margin-top: 260px;
+                /* background: green; */
+            }
+
+
+            .jeansArea {
+                 /* background: blue; */
+                width: 200px;
+                height: 270px;
+                position: fixed;
+                display: flex;
+                /* background: green; */
+                left: 505px;
+                margin-top: 260px;      
+                justify-content: center;
+            }
+
+            .sneakersArea1 {
+                width: 60px;
+                height: 90px;
+                display: flex;
+                justify-content: center;
+                position: fixed;
+                left: 560px;
+                margin-top: 470px;
+                /* background: black; */
+            }
+
+            .sneakersArea1 > img {
+                width: 100%;
+            }
+
+            .sneakersArea2 {
+                width: 60px;
+                height: 90px;
+                display: flex;
+                justify-content: center;
+                position: fixed;
+                left: 610px;
+                margin-top: 470px;
+                /* background: yellow;    */
+            }
+
+            .sneakersArea2 > img {
+                width: 100%;
+            }
+
+
+
+
+        </style>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <div class = "navBar">
+            <a href = "/users/show/<%=userNumber%>">Back to Show Page</a>
+            <a href = "/users/addItem/<%=userNumber%>">Add Item</a>
+        </div>
+
+        <div class = "container">
+            <div class = "mannequinArea">
+         <img src = "https://i.imgur.com/mSnbCHF.png?1" id = "mannequin">
+
+                </div>
+
+
+        <div class = "hatArea">
+            <%if (hatImage) {%>
+               
+            <img src = "<%=hatImage[0]%>">
+<% } %>
+        </div>
+
+
+         <div class = "jeansArea">
+                <%if (jeansImage) {%>
+                   
+                    <img src = "<%=jeansImage[0]%>">
+             
+        <% } %>
+
+            </div>
+
+
+        <div class = "tShirtArea">
+               
+               
+                    <img src = "<%=tShirtImage[0]%>">
+
+
+            </div>
+   
+   
+
+         <div class = "jacketArea">
+                <%if (jacketImage) {%>
+               
+                    <img src = "<%=jacketImage[0]%>">
+        <% } %>
+
+
+            </div>  
+
+         <div class = "watchArea" id = "watch">
+                <%if (watchImage) {%>
+               
+                    <img src = "<%=watchImage[0]%>">
+        <% } %>
+
+            </div>
+
+            <div class = "sneakersArea1">
+                    <%if (sneakersImage) {%>
+               
+                        <img src = "<%=sneakersImage[0]%>">
+            <% } %>
+
+
+                </div>
+
+                <div class = "sneakersArea2">
+                        <%if (sneakersImage) {%>
+               
+                            <img src = "<%=sneakersImage[0]%>">
+                <% } %>
+  
+                    </div>
+                </div>
+
+    </body>
+</html>

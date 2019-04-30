@@ -7,6 +7,7 @@ const methodOverride = require('method-override');
 const bcrypt = require('bcrypt');
 const port = 3000;
 
+
 // USER MODEL REQUIRE
 const User = require('./models/users');
 

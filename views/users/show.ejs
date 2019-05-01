@@ -130,34 +130,35 @@
 
       <div class = "navBar">
           <div class = "col">
-            <h4>
+            <h3>
               <a href = "/">Homepage</a>
-            </h4>
+            </h3>
           </div>
           <br/>
 
           <div class = "col">
-              <h4>
+              <h3>
                 <a href = "/users/show/<%=user.id%>"">Show Page</a>
-              </h4>
+              </h3>
           </div>
           <br/>
 
           <div class = "col">
-              <h4>
-                <a href = "/users/currentOutfit/<%=user.id%>">Current Outfit Page</a>
-              </h4>
+              <h3>
+                <a href = "/users/currentOutfit/<%=user.id%>">Current Outfit</a>
+              </h3>
           </div>
 
           <div class = "col">
-              <h4>
+              <h3>
                 <a href = "/users/addItem/<%=user.id%>">  Add Item</a>
-              </h4>
+              </h3>
           </div>
 
           <div class = "col">
-              <h4><a href = "/users/edit/<%=user.id%>
-                ">  Edit Profile</a></h4>
+              <h3><a href = "/users/edit/<%=user.id%>
+                ">  Edit Profile</a>
+              </h3>
           </div>
     </div>
 
@@ -165,7 +166,7 @@
     <div class = "row" id = "clothingSection">
       <div class = "col" id = "clothingImage">
           <div class = "backgroundImage">
-            <h3>T-Shirts</h3>
+            <h2>T-Shirts</h2>
             <a href = "/users/show/tShirts/<%=user.id%>">
               <% if (tShirtImage) { %>
             <img src = "<%=tShirtImage%>">
@@ -193,7 +194,7 @@
 
       <div class = "col"  id = "clothingImage">
         <div class = "backgroundImage">
-          <h3>Jeans</h3>
+          <h2>Jeans</h2>
             <a href = "/users/show/jeans/<%=user.id%>">
               <% if (jeansImage) { %>
             <img src = "<%=jeansImage%>">
@@ -220,7 +221,7 @@
 
       <div class = "col" id = "clothingImage">
           <div class = "backgroundImage">
-            <h3>Pants</h3>
+            <h2>Pants</h2>
             <a href = "/users/show/pants/<%=user.id%>">
                 <% if (pantsImage) { %>
             <img src = "<%=pantsImage%>">
@@ -250,7 +251,7 @@
         <div class = "col" id = "clothingImage">
   
           <div class = "backgroundImage">
-        <h3>Hats</h3>
+        <h2>Hats</h2>
     
         <a href = "/users/show/hat/<%=user.id%>">
             <% if (hatImage) { %>
@@ -278,7 +279,7 @@
 
       <div class = "col" id = "clothingImage">
         <div class = "backgroundImage">
-        <h3>Sneakers</h3>
+        <h2>Sneakers</h2>
         <a href = "/users/show/sneakers/<%=user.id%>">
             <% if (sneakersImage) { %>
         <img src = "<%=sneakersImage%>">
@@ -306,7 +307,7 @@
 
       <div class = "col" id = "clothingImage">
         <div class = "backgroundImage">
-        <h3>Watches</h3>
+        <h2>Watches</h2>
         <a href = "/users/show/watch/<%=user.id%>">
             <% if (watchImage) { %>
         <img src = "<%=watchImage%>">
@@ -333,7 +334,7 @@
 
       <div class = "col" id = "clothingImage">
         <div class = "backgroundImage">
-          <h3>Glasses</h3>
+          <h2>Glasses</h2>
           <a href = "/users/show/glasses/<%=user.id%>">
               <% if (glassesImage) { %>
           <img src = "<%=glassesImage%>">

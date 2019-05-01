@@ -5,7 +5,8 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const methodOverride = require('method-override');
 const bcrypt = require('bcrypt');
-const port = 3000;
+
+const port = process.env.PORT || 3000;
 
 
 // USER MODEL REQUIRE
@@ -481,7 +482,9 @@ app.listen(port, () => {
   console.log('listening and...listening and...');
 });
 
-mongoose.connect('mongodb://localhost:27017/kingsman');
+
+const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/kingsman'
+mongoose.connect(mongoURI);
 mongoose.connection.once('open', () => {
     console.log('connected to mongo');
 });

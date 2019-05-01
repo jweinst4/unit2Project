@@ -13,7 +13,7 @@ const userSchema = Schema({
   hatImage: [{type:String}],
   sneakersImage: [{type:String}],
   watchImage: [{type:String}],
-  jacketImage: [{type:String}],
+  glassesImage: [{type:String}],
   mannequinImage: [{type:String}],
   clothingType: [{type:String}],
   currentTShirtImage: [{type:String}],
@@ -22,7 +22,7 @@ const userSchema = Schema({
   currentHatImage: [{type:String}],
   currentSneakersImage: [{type:String}],
   currentWatchImage: [{type:String}],
-  currentJacketImage: [{type:String}],
+  currentGlassesImage: [{type:String}],
   messages: [String, String, String]
 })
 

@@ -318,10 +318,10 @@
 
       <div class = "col" id = "clothingImage">
         <div class = "backgroundImage">
-          <h3>Jackets</h3>
-          <a href = "/users/show/jacket/<%=user.id%>">
-              <% if (jacketImage) { %>
-          <img src = "<%=jacketImage%>">
+          <h3>Glasses</h3>
+          <a href = "/users/show/glasses/<%=user.id%>">
+              <% if (glassesImage) { %>
+          <img src = "<%=glassesImage%>">
           <% } %> 
             </a>
           </div>
@@ -335,7 +335,7 @@
             </div>
 
             <div class = "row ">
-              <form action="/users/show/jacket/<%=user.id; %>?_method=DELETE" method="POST" id = "deleteClothingButton">
+              <form action="/users/show/glasses/<%=user.id; %>?_method=DELETE" method="POST" id = "deleteClothingButton">
 
                 <input type="submit" value="<%=clothingString%>"/>
             </form>

@@ -9,7 +9,7 @@
                 margin-top: 10px;
             }
             .mannequinArea {
-                width: 200px;
+
                 height: 330px;
                 position: fixed;
                 left: 495px;
@@ -20,9 +20,9 @@
         
 
             .hatArea {
-                width: 70px;
+ 
                 height: 70px;
-                position: absolute;
+                position: fixed;
                 display: flex;
                 justify-content: center;
                 /* background: red; */
@@ -31,16 +31,13 @@
                 margin-top: -20px;
             }
 
-            .jacketArea {
-                width: 200px;
-                height: 220px; 
-                /* background: orange; */
-             display: flex;
+            .glassesArea {
+         
+                height: 25px; 
              justify-content: center;
                 position: fixed;
-                left: 505px;
-                margin-top: 70px;
-                z-index: -1;
+                left: 575px;
+                margin-top: 30px;
             
             }
 
@@ -79,7 +76,7 @@
 
             .watchArea {
                 display: flex;
-                width: 40px;
+          
                 height: 40px;
                 position: fixed;
                 left: 510px;
@@ -178,10 +175,10 @@
    
    
 
-         <div class = "jacketArea">
-                <%if (jacketImage) {%>
+         <div class = "glassesArea">
+                <%if (glassesImage) {%>
                
-                    <img src = "<%=jacketImage[0]%>">
+                    <img src = "<%=glassesImage[0]%>">
         <% } %>
 
 

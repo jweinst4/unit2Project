@@ -57,7 +57,7 @@ app.get("/users/addItem/:_id", (req, res) => {
         hatImage: allUsers.hatImage,
         sneakersImage: allUsers.sneakersImage,
         watchImage: allUsers.watchImage,
-        jacketImage: allUsers.jacketImage
+        glassesImage: allUsers.glassesImage
       });
     console.log("successful add item get route");
 
@@ -139,12 +139,12 @@ app.get("/users/addItem/:_id", (req, res) => {
               });
               })
 
-              app.get("/users/show/jacket/:_id", (req, res) => {
+              app.get("/users/show/glasses/:_id", (req, res) => {
                 User.findById(req.params._id, (error, allUsers)=>{
               
-                  console.log("Jacket Show route");
+                  console.log("Glasses Show route");
                   
-                    res.render('users/Jacket.ejs', {
+                    res.render('users/Glasses.ejs', {
                       user: allUsers
                     });
             
@@ -171,7 +171,7 @@ app.get("/users/show/:_id", (req, res) => {
           hatImage: allUsers.hatImage[0],
           sneakersImage: allUsers.sneakersImage[0],
           watchImage: allUsers.watchImage[0],
-          jacketImage: allUsers.jacketImage[0],
+          glassesImage: allUsers.glassesImage[0],
           mannequinImage: allUsers.mannequinImage
       });
   });
@@ -210,14 +210,14 @@ app.get("/users/currentOutfit/:_id", (req, res) => {
         hatImage: allUsers.hatImage,
         sneakersImage: allUsers.sneakersImage,
         watchImage: allUsers.watchImage,
-        jacketImage: allUsers.jacketImage,
+        glassesImage: allUsers.glassesImage,
         currentTShirtImage: allUsers.currentTShirtImage,
         currentJeansImage: allUsers.currentJeansImage,
         currentPantsImage: allUsers.currentPantsImage,
         currentHatImage: allUsers.currentHatImage,
         currentSneakersImage: allUsers.currentSneakersImage,
         currentWatchImage: allUsers.currentWatchImage,
-        currentJacketImage: allUsers.currentJacketImage,
+        currentGlassesImage: allUsers.currentGlassesImage,
         mannequinImage: allUsers.mannequinImage
       });
     console.log("currentOutfit route")
@@ -323,10 +323,10 @@ app.delete('/users/show/tShirt/:_id', (req, res)=>{
             });
             });
 
-            app.delete('/users/show/jacket/:_id', (req, res)=>{
-              User.findByIdAndUpdate(req.params._id, {"$pop": {"jacketImage": -1 } }, (err, updatedUser)=>{
+            app.delete('/users/show/glasses/:_id', (req, res)=>{
+              User.findByIdAndUpdate(req.params._id, {"$pop": {"glassesImage": -1 } }, (err, updatedUser)=>{
                 
-                  console.log("jacket: ",req.params._id," deleted");
+                  console.log("Glasses: ",req.params._id," deleted");
                 
                   res.redirect('/users/show/' + req.params._id);
               });
@@ -447,8 +447,8 @@ app.put('/users/show/jeans/:_id', (req, res)=>{
           });
           });
 
-          app.put('/users/show/jacket/:_id', (req, res)=>{
-            User.findByIdAndUpdate(req.params._id, {"$push": {"jacketImage": req.body.jacketImage } }, (err, updatedUser)=>{
+          app.put('/users/show/glasses/:_id', (req, res)=>{
+            User.findByIdAndUpdate(req.params._id, {"$push": {"glassesImage": req.body.glassesImage } }, (err, updatedUser)=>{
               if(err){
                 console.log(err);
               }
@@ -456,7 +456,7 @@ app.put('/users/show/jeans/:_id', (req, res)=>{
                 
               }
             
-                console.log("successful add Jacket post route");
+                console.log("successful add glasses post route");
                 res.redirect('/users/currentOutfit/' + req.params._id);
             });
             });

@@ -30,6 +30,13 @@
   user-select: none;
 }
 
+.col > a {
+  font-size: 24px;
+
+}
+
+
+
 body {
   margin-left: 20px;
 }
@@ -118,15 +125,16 @@ body {
         is a free site that removes backgrounds easily.  Upload your image to their site, then use the green marker to indicate which parts of the image you would like to keep.  After, use the red marker to indicate the parts of the image you would like to remove.  Then download the new image and upload to imgur or any other hosting site.  Enter the DIRECT url of your image below.</h8></p>
        </div>
 
- 
-    <div class = "row">     
+ <div class = "row">
+    <div class = "col">     
         <form action="/users/show/tShirt/<%=user.id%>/?_method=PUT" method="POST">
-   <label> T-Shirt Image URL: <input type="text" name="tShirtImage"/></label>
+T-Shirt Image URL: <input type="text" name="tShirtImage"/>
             <input type="submit" name="" value="Submit Changes"/>     
         </form>  
+      
       </div>
       
-      <div class = "row">
+      <div class = "col">
         <form action="/users/show/jeans/<%=user.id%>/?_method=PUT" method="POST">
           <!-- https://i.imgur.com/ieXi1t5.jpg -->
           Jeans Image URL: <input type="text" name="jeansImage"/><br/>
@@ -138,6 +146,7 @@ body {
         </form>
             </div>
 
+          <div class = "col">
         <form action="/users/show/pants/<%=user.id%>/?_method=PUT" method="POST">
           <!-- https://www.mensjournal.com/style/best-khaki-pants-men/ -->
           Pants Image URL: <input type="text" name="pantsImage"/><br/>
@@ -146,7 +155,13 @@ body {
           <br/>
  
         </form>
+      </div>
+    </div>
+    <br/>
+    
 
+<div class = "row">
+      <div class = "col">
         <form action="/users/show/hat/<%=user.id%>/?_method=PUT" method="POST">
           <!-- http://streetwearhub.com/mcm-all-over-classic-snapback-hat-brown-orange -->
 
@@ -156,7 +171,9 @@ body {
           <br/>
      
         </form>
+      </div>
 
+      <div class = "col">
         <form action="/users/show/sneakers/<%=user.id%>/?_method=PUT" method="POST">
           <!-- http://www.ambalajtasarlayin.com/sneakers-c-10_11/air-jordan-1-retro-high-og-39bred39-55508803-555088023manufacturernameair-jordan-trczlgm-p-1963.html -->
 
@@ -166,7 +183,9 @@ body {
           <br/>
        
         </form>
+      </div>
 
+      <div class = "col">
         <form action="/users/show/watch/<%=user.id%>/?_method=PUT" method="POST">
           <!-- http://sumptersjewelry.com/shop/new-arrivals/mens-rolex-750-18k-yellow-gold-oyster-perpetual-day-date-president-watch-18038/ -->
 
@@ -176,7 +195,11 @@ body {
           <br/>
       
         </form>
+        <br/>
+      </div>
+     
 
+      <div class = "col">
         <form action="/users/show/glasses/<%=user.id%>/?_method=PUT" method="POST">
           <!-- http://sumptersjewelry.com/shop/new-arrivals/mens-rolex-750-18k-yellow-gold-oyster-perpetual-day-date-president-watch-18038/ -->
 
@@ -186,16 +209,10 @@ body {
           <br/>
       
         </form>
+      </div>
 
-        <select name = "clothingType" id = "clothingType">
-          <option value = "T-Shirt">T-Shirt</option>
-          <option value = "Jeans">Jeans</option>
-          <option value = "Pants">Pants</option>
-          <option value = "Hat">Hat</option>
-          <option value = "Sneakers">Sneakers</option>
-          <option value = "Watch">Watch</option>
-          <option value = "Glasses">Glasses</option>
-        </select>
+    </div>
+   
 
     </body>
 </html>

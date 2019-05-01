@@ -87,13 +87,12 @@ body {
 	border-radius: 50%;
 	background: white;
 }
-        
+      
        form {
             width: 400px;
-  
-         
+   
         }
-        
+   
         </style>
         <meta charset="utf-8">
         <title></title>
@@ -119,11 +118,12 @@ body {
         is a free site that removes backgrounds easily.  Upload your image to their site, then use the green marker to indicate which parts of the image you would like to keep.  After, use the red marker to indicate the parts of the image you would like to remove.  Then download the new image and upload to imgur or any other hosting site.  Enter the DIRECT url of your image below.</h8></p>
        </div>
 
-    <div class = "row">
+ 
+    <div class = "row">     
         <form action="/users/show/tShirt/<%=user.id%>/?_method=PUT" method="POST">
-      T-Shirt Image URL: <input type="text" name="tShirtImage"/>
-            <input type="submit" name="" value="Submit Changes"/>
-        </form>
+    T-Shirt Image URL: <input type="text" name="tShirtImage"/>
+            <input type="submit" name="" value="Submit Changes"/>     
+        </form>  
       </div>
       
       <div class = "row">

@@ -144,7 +144,7 @@ app.get("/users/addItem/:_id", (req, res) => {
               
                   console.log("Glasses Show route");
                   
-                    res.render('users/Glasses.ejs', {
+                    res.render('users/glasses.ejs', {
                       user: allUsers
                     });
             

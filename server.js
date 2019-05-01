@@ -264,7 +264,7 @@ User.findByIdAndRemove(req.params._id, (err, deletedUser)=>{
   
     console.log("id: ",req.params._id," deleted");
   
-    res.redirect('/users');
+    res.redirect('/');
 });
 });
 

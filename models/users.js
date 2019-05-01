@@ -16,6 +16,13 @@ const userSchema = Schema({
   jacketImage: [{type:String}],
   mannequinImage: [{type:String}],
   clothingType: [{type:String}],
+  currentTShirtImage: [{type:String}],
+  currentJeansImage: [{type:String}],
+  currentPantsImage: [{type:String}],
+  currentHatImage: [{type:String}],
+  currentSneakersImage: [{type:String}],
+  currentWatchImage: [{type:String}],
+  currentJacketImage: [{type:String}],
   messages: [String, String, String]
 })
 

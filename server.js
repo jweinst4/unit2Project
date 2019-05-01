@@ -62,9 +62,10 @@ app.get("/users/addItem/:_id", (req, res) => {
 
   });
   })
+  
 
   app.get("/users/show/tShirts/:_id", (req, res) => {
-    User.findById(req.params._id, (error, allUsers)=>{
+    User.findById(req.params._id,  (error, allUsers)=>{
   
       console.log("tShirt Show route");
       
@@ -73,8 +74,10 @@ app.get("/users/addItem/:_id", (req, res) => {
         });
 
     });
-    })
 
+  })
+
+    
     app.get("/users/show/jeans/:_id", (req, res) => {
       User.findById(req.params._id, (error, allUsers)=>{
     
@@ -207,6 +210,13 @@ app.get("/users/currentOutfit/:_id", (req, res) => {
         sneakersImage: allUsers.sneakersImage,
         watchImage: allUsers.watchImage,
         jacketImage: allUsers.jacketImage,
+        currentTShirtImage: allUsers.currentTShirtImage,
+        currentJeansImage: allUsers.currentJeansImage,
+        currentPantsImage: allUsers.currentPantsImage,
+        currentHatImage: allUsers.currentHatImage,
+        currentSneakersImage: allUsers.currentSneakersImage,
+        currentWatchImage: allUsers.currentWatchImage,
+        currentJacketImage: allUsers.currentJacketImage,
         mannequinImage: allUsers.mannequinImage
       });
     console.log("currentOutfit route")
@@ -234,7 +244,7 @@ app.get('/users/new', (req, res) => {
 //INDEX route
 app.get("/users/", (req, res) => {
 User.findById(req.params._id, (error, allUsers)=>{
-  console.log(allUsers);
+
 
     res.render('users/user.ejs', {
         user: allUsers,
@@ -262,7 +272,7 @@ User.findByIdAndRemove(req.params._id, (err, deletedUser)=>{
 //CREATE route
 app.post('/users/create', (req, res) => {
   User.create(req.body, (err, createdUser) => {
-    console.log()
+
     if (err) {
       console.log(err)
     }
@@ -271,18 +281,32 @@ app.post('/users/create', (req, res) => {
   })  
 })
 
+app.put('/users/show/:_id', (req, res)=>{
+  User.findByIdAndUpdate(req.params._id, req.body, (err, updatedUser)=>{
+    if(err){
+      console.log(err);
+    }
+    else {
+  
+    }
+    console.log(updatedUser.tShirtImage)
+      console.log("successful Edit Profile route");
+      res.redirect('/users/show/' + req.params._id);
+  });
+  });
+
 
 
 //PUT route, THIS IS THE PART I NEED 
 app.put('/users/show/tShirt/:_id', (req, res)=>{
-User.findByIdAndUpdate(req.params._id, {"$push": {"tShirtImage": req.body.tShirtImage } }, (err, updatedUser)=>{
+User.findByIdAndUpdate(req.params._id, {"$push": {"tShirtImage": req.body.tShirtImage } }, {"$push": {"currentTShirtImage": req.body.tShirtImage } }, (err, updatedUser)=>{
   if(err){
     console.log(err);
   }
   else {
-    console.log(updatedUser);
-  }
 
+  }
+  console.log(updatedUser.tShirtImage)
     console.log("successful add tShirt post route");
     res.redirect('/users/currentOutfit/' + req.params._id);
 });
@@ -295,7 +319,7 @@ app.put('/users/show/jeans/:_id', (req, res)=>{
       console.log(err);
     }
     else {
-      console.log(updatedUser);
+
     }
   
       console.log("successful add Jeans post route");
@@ -309,7 +333,7 @@ app.put('/users/show/jeans/:_id', (req, res)=>{
         console.log(err);
       }
       else {
-        console.log(updatedUser);
+     
       }
     
         console.log("successful add Pants post route");
@@ -323,7 +347,7 @@ app.put('/users/show/jeans/:_id', (req, res)=>{
           console.log(err);
         }
         else {
-          console.log(updatedUser);
+     
         }
       
           console.log("successful add Hat post route");
@@ -337,7 +361,7 @@ app.put('/users/show/jeans/:_id', (req, res)=>{
             console.log(err);
           }
           else {
-            console.log(updatedUser);
+      
           }
         
             console.log("successful add Sneakers post route");
@@ -351,7 +375,7 @@ app.put('/users/show/jeans/:_id', (req, res)=>{
               console.log(err);
             }
             else {
-              console.log(updatedUser);
+           
             }
           
               console.log("successful add Watch post route");
@@ -365,7 +389,7 @@ app.put('/users/show/jeans/:_id', (req, res)=>{
                 console.log(err);
               }
               else {
-                console.log(updatedUser);
+                
               }
             
                 console.log("successful add Jacket post route");

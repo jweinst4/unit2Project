@@ -93,7 +93,7 @@ app.get("/users/addItem/:_id", (req, res) => {
       app.get("/users/show/pants/:_id", (req, res) => {
         User.findById(req.params._id, (error, allUsers)=>{
       
-          console.log("tPants Show route");
+          console.log("Pants Show route");
           
             res.render('users/pants.ejs', {
               user: allUsers
@@ -188,7 +188,7 @@ app.get('/seedAgents', (req, res) => {
   // seeds the data
   User.create(seed, (err, createdUsers) => {
     // logs created users
-    //console.log(createdUsers);
+  
     // redirects to index
     res.redirect('/');
   });
@@ -235,7 +235,7 @@ app.get("/users/currentOutfit/:_id", (req, res) => {
 
 //NEW route
 app.get('/users/new', (req, res) => {
-  //console.log("new route");
+  console.log("new route");
   res.render('users/new.ejs')
 })
 
@@ -268,6 +268,69 @@ User.findByIdAndRemove(req.params._id, (err, deletedUser)=>{
 });
 });
 
+app.delete('/users/show/tShirt/:_id', (req, res)=>{
+  User.findByIdAndUpdate(req.params._id, {"$pop": {"tShirtImage": -1 } }, (err, updatedUser)=>{
+    
+      console.log("tShirt: ",req.params._id," deleted");
+    
+      res.redirect('/users/show/' + req.params._id);
+  });
+  });
+
+  app.delete('/users/show/jeans/:_id', (req, res)=>{
+    User.findByIdAndUpdate(req.params._id, {"$pop": {"jeansImage": -1 } }, (err, updatedUser)=>{
+      
+        console.log("jeans: ",req.params._id," deleted");
+      
+        res.redirect('/users/show/' + req.params._id);
+    });
+    });
+
+    app.delete('/users/show/pants/:_id', (req, res)=>{
+      User.findByIdAndUpdate(req.params._id, {"$pop": {"pantsImage": -1 } }, (err, updatedUser)=>{
+        
+          console.log("pants: ",req.params._id," deleted");
+        
+          res.redirect('/users/show/' + req.params._id);
+      });
+      });
+
+      app.delete('/users/show/hat/:_id', (req, res)=>{
+        User.findByIdAndUpdate(req.params._id, {"$pop": {"hatImage": -1 } }, (err, updatedUser)=>{
+          
+            console.log("hat: ",req.params._id," deleted");
+          
+            res.redirect('/users/show/' + req.params._id);
+        });
+        });
+
+        app.delete('/users/show/sneakers/:_id', (req, res)=>{
+          User.findByIdAndUpdate(req.params._id, {"$pop": {"sneakersImage": -1 } }, (err, updatedUser)=>{
+            
+              console.log("sneakers: ",req.params._id," deleted");
+            
+              res.redirect('/users/show/' + req.params._id);
+          });
+          });
+
+          app.delete('/users/show/watch/:_id', (req, res)=>{
+            User.findByIdAndUpdate(req.params._id, {"$pop": {"watchImage": -1 } }, (err, updatedUser)=>{
+              
+                console.log("watch: ",req.params._id," deleted");
+              
+                res.redirect('/users/show/' + req.params._id);
+            });
+            });
+
+            app.delete('/users/show/jacket/:_id', (req, res)=>{
+              User.findByIdAndUpdate(req.params._id, {"$pop": {"jacketImage": -1 } }, (err, updatedUser)=>{
+                
+                  console.log("jacket: ",req.params._id," deleted");
+                
+                  res.redirect('/users/show/' + req.params._id);
+              });
+              });
+
 
 //CREATE route
 app.post('/users/create', (req, res) => {
@@ -289,7 +352,7 @@ app.put('/users/show/:_id', (req, res)=>{
     else {
   
     }
-    console.log(updatedUser.tShirtImage)
+
       console.log("successful Edit Profile route");
       res.redirect('/users/show/' + req.params._id);
   });
@@ -306,7 +369,7 @@ User.findByIdAndUpdate(req.params._id, {"$push": {"tShirtImage": req.body.tShirt
   else {
 
   }
-  console.log(updatedUser.tShirtImage)
+
     console.log("successful add tShirt post route");
     res.redirect('/users/currentOutfit/' + req.params._id);
 });

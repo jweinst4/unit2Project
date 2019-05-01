@@ -5,11 +5,13 @@
     
     img {
       width: 40%;
+      
     }
 
     #clothingSection {
       display: flex;
       justify-content: space-between;
+      
     }
 
 
@@ -19,15 +21,19 @@
       display: flex;
       background-color: grey;  
       font-size: 20px; 
+      
     }
     
 
     .backgroundImage {
       background: white;
+      
+
     }
 
     .col {
       flex: 1 1 0;
+      
     }
 
     .footer {
@@ -53,41 +59,37 @@
       font-size: 15px;
       min-height: 220px;
       background: white;
+      
+      
     }
 
     .navBar {
       display: flex;
       background-image: url("https://i.imgur.com/LMLm1hu.jpg?1");
-      height: 200px;
+      height: 180px;
       background-repeat: no-repeat repeat;
       background-size: 60%;
       width: 100%;
       border: 1px solid black;
       align-items: center;
       align-content: center;
+      text-align: center;
+      
     }
-
     .outfitOption {
-      position: relative;
       max-width: 25%;
       border: 5px solid gold;
-      align-content:flex-end;
-      float: right;
     }
 
     #clothingImage {
     justify-content: space-between; 
-    display: flex;
-  
     }
 
     .outfitOption > div {
       background: pink;
       border: 1px solid black;
       align-items: center;
-      height: 50%;
-
-      
+      height: 50%; 
     }
 
     </style>
@@ -106,7 +108,7 @@
 
           <div class = "col">
               <h4>
-                <a href = "/users/show/<%=user.id%>"">Testing Show Page</a>
+                <a href = "/users/show/<%=user.id%>"">Show Page</a>
               </h4>
           </div>
           <br/>
@@ -147,11 +149,10 @@
               </div>
             
               <div class = "row">
-                <form action="/users/show/<%=user.id; %>/tShirt?_method=DELETE" method="POST" >
-              
+                <form action="/users/show/tShirt/<%=user.id; %>?_method=DELETE" method="POST" id = "deleteUserButton">
+
                   <input type="submit" value="DELETE T-SHIRT"/>
-                
-                </form>
+              </form>
               </div>
           </div>
     </div>
@@ -172,10 +173,10 @@
           </div>
 
           <div class = "row">
-            <form action="/users/show/<%=user.id; %>/jeans?_method=DELETE" method="POST" >
-      
-                <input type="submit" value="DELETE JEANS"/>
-            </form>
+            <form action="/users/show/jeans/<%=user.id; %>?_method=DELETE" method="POST" id = "deleteUserButton">
+
+              <input type="submit" value="DELETE JEANS"/>
+          </form>
           </div>
         </div>
   </div>
@@ -196,9 +197,10 @@
               </div>
 
             <div class = "row">
-                <form action="/users/show/<%=user.id; %>/pants?_method=DELETE" method="POST" >
-                  <input type="submit" value="DELETE PANTS"/> 
-              </form>
+              <form action="/users/show/pants/<%=user.id; %>?_method=DELETE" method="POST" id = "deleteUserButton">
+
+                <input type="submit" value="DELETE PANTS"/>
+            </form>
             </div>
           </div>
       </div>
@@ -223,11 +225,10 @@
           </div>
 
           <div class = "row">
-              <form action="/users/show/<%=user.id; %>/hat?_method=DELETE" method="POST" >
-            
-                <input type="submit" value="DELETE HAT"/>
-            
-            </form>
+            <form action="/users/show/hat/<%=user.id; %>?_method=DELETE" method="POST" id = "deleteUserButton">
+
+              <input type="submit" value="DELETE HAT"/>
+          </form>
           </div>
         </div>
       </div>
@@ -248,11 +249,10 @@
           </div>
 
           <div class = "row">
-              <form action="/users/show/<%=user.id; %>/sneakers?_method=DELETE" method="POST" >
-          
-                <input type="submit" value="DELETE SNEAKERS"/>
-          
-            </form>
+            <form action="/users/show/sneakers/<%=user.id; %>?_method=DELETE" method="POST" id = "deleteUserButton">
+
+              <input type="submit" value="DELETE SNEAKERS"/>
+          </form>
           </div>
         </div>
       </div>
@@ -273,11 +273,10 @@
           </div>
 
           <div class = "row">
-              <form action="/users/show/<%=user.id; %>/watch?_method=DELETE" method="POST" >
-          
-                <input type="submit" value="DELETE WATCH"/>
-          
-            </form>
+            <form action="/users/show/watch/<%=user.id; %>?_method=DELETE" method="POST" id = "deleteUserButton">
+
+              <input type="submit" value="DELETE WATCH"/>
+          </form>
           </div>
         </div>
       </div>
@@ -298,11 +297,10 @@
             </div>
 
             <div class = "row ">
-                <form action="/users/show/<%=user.id; %>/jacket?_method=DELETE" method="POST" >
-                
-                  <input type="submit" value="DELETE JACKET"/>
-          
-              </form>
+              <form action="/users/show/jacket/<%=user.id; %>?_method=DELETE" method="POST" id = "deleteUserButton">
+
+                <input type="submit" value="DELETE JACKET"/>
+            </form>
             </div>
           </div>
 

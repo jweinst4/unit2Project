@@ -93,11 +93,6 @@ body {
    
         }
 
-        #addForm  input[type=text] {
-         display: inline-block !important;
-         background: red;
-        }
-        
         </style>
         <meta charset="utf-8">
         <title></title>
@@ -124,7 +119,7 @@ body {
        </div>
 
  
-    <div class = "row" id = "addForm">     
+    <div class = "row">     
         <form action="/users/show/tShirt/<%=user.id%>/?_method=PUT" method="POST">
    <label> T-Shirt Image URL: <input type="text" name="tShirtImage"/></label>
             <input type="submit" name="" value="Submit Changes"/>     

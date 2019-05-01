@@ -5,9 +5,9 @@
     
     img {
       width: 40%;
-      
     }
 
+ 
     #clothingSection {
       display: flex;
       justify-content: space-between;
@@ -23,7 +23,7 @@
       font-size: 20px; 
       
     }
-    
+
 
     .backgroundImage {
       background: white;
@@ -82,21 +82,37 @@
     }
 
     #clothingImage {
-    justify-content: space-between; 
+    justify-content: space-between;
+  
     }
 
     .outfitOption > div {
-      background: pink;
+      background: white;
       border: 1px solid black;
       align-items: center;
-      height: 50%; 
+      height: 50%;
     }
+
+    #deleteClothingButton input[type=submit] {
+
+      height: 80px;
+      border: 0px;
+    }
+
+    #placeholder input[type=submit] {
+      border: 0px;
+      height: 80px;
+    }
+
+    
+
 
     </style>
   </head>
     <body>
 
 <div class="container">
+                <%let clothingString = "DELETE ITEM"%>
 
       <div class = "navBar">
           <div class = "col">
@@ -145,13 +161,17 @@
 
           <div class = "outfitOption">
               <div class = "row">
-                <a href = "#">Add to Current Outfit</a>
-              </div>
+                  <form action="/users/show/<%=user.id%>" id="placeholder">
+  
+                    <input type="submit" value="PLACEHOLDER"/>
+                </form>
+                </div>
+
             
               <div class = "row">
-                <form action="/users/show/tShirt/<%=user.id; %>?_method=DELETE" method="POST" id = "deleteUserButton">
+                <form action="/users/show/tShirt/<%=user.id; %>?_method=DELETE" method="POST" id = "deleteClothingButton">
 
-                  <input type="submit" value="DELETE T-SHIRT"/>
+                  <input type="submit" value="<%=clothingString%>"/>
               </form>
               </div>
           </div>
@@ -169,13 +189,16 @@
 
         <div class = "outfitOption">
           <div class = "row">
-            <a href = "#">Add to Current Outfit</a>
+              <form action="/users/show/<%=user.id%>" id = "placeholder">
+  
+                <input type="submit" value="PLACEHOLDER"/>
+            </form>
           </div>
 
           <div class = "row">
-            <form action="/users/show/jeans/<%=user.id; %>?_method=DELETE" method="POST" id = "deleteUserButton">
+            <form action="/users/show/jeans/<%=user.id; %>?_method=DELETE" method="POST" id = "deleteClothingButton">
 
-              <input type="submit" value="DELETE JEANS"/>
+              <input type="submit" value="<%=clothingString%>"/>
           </form>
           </div>
         </div>
@@ -193,13 +216,16 @@
       
           <div class = "outfitOption">
               <div class = "row">
-                <a href = "#">Add to Current Outfit</a>
+                  <form action="/users/show/<%=user.id%>" id = "placeholder">
+  
+                    <input type="submit" value="PLACEHOLDER"/>
+                </form>
               </div>
 
             <div class = "row">
-              <form action="/users/show/pants/<%=user.id; %>?_method=DELETE" method="POST" id = "deleteUserButton">
+              <form action="/users/show/pants/<%=user.id; %>?_method=DELETE" method="POST" id = "deleteClothingButton">
 
-                <input type="submit" value="DELETE PANTS"/>
+                <input type="submit" value="<%=clothingString%>"/>
             </form>
             </div>
           </div>
@@ -221,13 +247,16 @@
         
           <div class = "outfitOption">
             <div class = "row">
-          <a href = "#">Add to Current Outfit</a>
+                <form action="/users/show/<%=user.id%>" id = "placeholder">
+  
+                  <input type="submit" value="PLACEHOLDER"/>
+              </form>
           </div>
 
           <div class = "row">
-            <form action="/users/show/hat/<%=user.id; %>?_method=DELETE" method="POST" id = "deleteUserButton">
+            <form action="/users/show/hat/<%=user.id; %>?_method=DELETE" method="POST" id = "deleteClothingButton">
 
-              <input type="submit" value="DELETE HAT"/>
+              <input type="submit" value="<%=clothingString%>"/>
           </form>
           </div>
         </div>
@@ -244,17 +273,21 @@
         </div>
   
           <div class = "outfitOption">
+
             <div class = "row">
-          <a href = "#">Add to Current Outfit</a>
-          </div>
+                <form action="/users/show/<%=user.id%>" id = "placeholder">
+  
+                  <input type="submit" value="PLACEHOLDER"/>
+              </form>
+            </div>
 
-          <div class = "row">
-            <form action="/users/show/sneakers/<%=user.id; %>?_method=DELETE" method="POST" id = "deleteUserButton">
+            <div class = "row" id = "deleteSneakersClass">
+              <form action="/users/show/sneakers/<%=user.id; %>?_method=DELETE" method="POST" id = "deleteClothingButton">
+                <input type="submit" value="<%=clothingString%>"/>
+              </form>
+            </div>
 
-              <input type="submit" value="DELETE SNEAKERS"/>
-          </form>
           </div>
-        </div>
       </div>
 
       <div class = "col" id = "clothingImage">
@@ -269,13 +302,16 @@
     
           <div class = "outfitOption">
             <div class = "row">
-          <a href = "#">Add to Current Outfit</a>
+                <form action="/users/show/<%=user.id%>" id = "placeholder">
+  
+                  <input type="submit" value="PLACEHOLDER"/>
+              </form>
           </div>
 
           <div class = "row">
-            <form action="/users/show/watch/<%=user.id; %>?_method=DELETE" method="POST" id = "deleteUserButton">
+            <form action="/users/show/watch/<%=user.id; %>?_method=DELETE" method="POST" id = "deleteClothingButton">
 
-              <input type="submit" value="DELETE WATCH"/>
+              <input type="submit" value="<%=clothingString%>"/>
           </form>
           </div>
         </div>
@@ -293,13 +329,16 @@
       
             <div class = "outfitOption">
               <div class = "row">
-            <a href = "#">Add to Current Outfit</a>
+                  <form action="/users/show/<%=user.id%>" id = "placeholder">
+  
+                    <input type="submit" value="PLACEHOLDER"/>
+                </form>
             </div>
 
             <div class = "row ">
-              <form action="/users/show/jacket/<%=user.id; %>?_method=DELETE" method="POST" id = "deleteUserButton">
+              <form action="/users/show/jacket/<%=user.id; %>?_method=DELETE" method="POST" id = "deleteClothingButton">
 
-                <input type="submit" value="DELETE JACKET"/>
+                <input type="submit" value="<%=clothingString%>"/>
             </form>
             </div>
           </div>

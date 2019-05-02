@@ -9,6 +9,7 @@
   background: #eee;
   font-family: 'Montserrat', helvetica;
   font-size: 0.9em;
+
       }
 
       a {
@@ -20,6 +21,7 @@
     
     img {
       width: 80%;
+      
  
     }
 
@@ -27,6 +29,8 @@
     #clothingSection {
       display: flex;
       justify-content: space-between;
+      
+
       
     }
 
@@ -38,17 +42,20 @@
       background-color: grey;  
       font-size: 20px; 
       
+      
     }
 
 
     .backgroundImage {
       background: white;
+
       
 
     }
 
     .col {
       flex: 1 1 0;
+
       
     }
 
@@ -99,8 +106,6 @@
 
     #clothingImage {
     justify-content: space-between;
-    
-  
     }
 
     .outfitOption > div {
@@ -108,6 +113,7 @@
       border: 1px solid black;
       align-items: center;
       height: 50%;
+      
     }
 
     #deleteClothingButton input[type=submit] {
@@ -258,7 +264,7 @@
       </div>
     </div>
 
-      <div class = "row">
+      <div class = "row" id = "clothingSection">
         <div class = "col" id = "clothingImage">
   
           <div class = "backgroundImage">
@@ -375,24 +381,18 @@
       </div>
 
       <div class = "footer">
+        <div class = "col">
 
-  
+           <form action="/users/show/<%=user.id; %>?_method=DELETE" method="POST" id = "deleteUserButton">
 
-<div class = "col">
+              <input type="submit" value="DELETE USER"/>
+          </form>
+        </div>
 
-    <form action="/users/show/<%=user.id; %>?_method=DELETE" method="POST" id = "deleteUserButton">
-
-      <input type="submit" value="DELETE USER"/>
-  </form>
-</div>
-
-  
-
-
-    <div class = "col">
-     &copy; JSW 2019
-    </div>
-  </div>
+            <div class = "col">
+            &copy; JSW 2019
+            </div>
+          </div>
 
     
         </div>

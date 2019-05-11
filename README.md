@@ -1,4 +1,4 @@
-Most of my time spent on this project was implementing functionality.  Given more time,I would have probably added additional functionality for 4-7 days, then would focus on styling.  I would probably look for creative inspirtion and make a minimalistic styled webpage.
+Most of my time spent on this project was implementing functionality.  Given more time,I would have probably added additional functionality for 4-7 days, then would focus on styling.  I would probably look for creative inspiration and make a minimalistic styled webpage.
 
 I would also try to implement a scroll button for each of the clothing items that shows a preview of the next 3 or 4 items in the database.  I would also try to push the most recent added clothing item to the current outfit area which wouldnt take too long.
 
